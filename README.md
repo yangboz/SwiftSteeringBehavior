@@ -3,8 +3,7 @@ SwiftSteeringBehavior
 
 Steering behavior example at &lt;&lt;AdvanceEDActionScriptAnimation>> with abstracted interfaces and marshaling implementation by Swift language. 
 
-Reference
-=====================
+* Reference
 
 http://www.raywenderlich.com/76147/uikit-dynamics-tutorial-swift
 
