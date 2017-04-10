@@ -1,0 +1,5 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.51 clang-802.0.41)"
+options: "3ff99696f5036840a4b47e9f8a9fa920"
+build_time: [544956098, 269765000]
+inputs:
+  "/Users/smartkit/git/SwiftSteeringBehavior/SwiftSteeringBehaviorDemo/SwiftSteeringBehaviorDemoTests/SwiftSteeringBehaviorDemoTests.swift": [541260160, 0]

@@ -159,9 +159,11 @@
 					6515FBFA199322160017D072 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 63X9SGW3ZX;
+						LastSwiftMigration = 0830;
 					};
 					6515FC0C199322160017D072 = {
 						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0830;
 						TestTargetID = 6515FBFA199322160017D072;
 					};
 				};
@@ -333,6 +335,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -346,6 +349,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -364,6 +368,7 @@
 				INFOPLIST_FILE = SwiftSteeringBehaviorDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -379,6 +384,7 @@
 				INFOPLIST_FILE = SwiftSteeringBehaviorDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
@@ -402,6 +408,7 @@
 				6515FC19199322160017D072 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6515FC1A199322160017D072 /* Build configuration list for PBXNativeTarget "SwiftSteeringBehaviorDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +417,7 @@
 				6515FC1C199322160017D072 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

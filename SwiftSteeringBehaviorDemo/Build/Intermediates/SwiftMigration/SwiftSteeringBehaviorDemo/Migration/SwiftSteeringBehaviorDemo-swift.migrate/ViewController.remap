@@ -1,0 +1,14 @@
+[
+ {
+  "file": "/Users/smartkit/git/SwiftSteeringBehavior/SwiftSteeringBehaviorDemo/SwiftSteeringBehaviorDemo/ViewController.swift",
+  "offset": 512,
+  "remove": 8,
+  "text": "y",
+ },
+ {
+  "file": "/Users/smartkit/git/SwiftSteeringBehavior/SwiftSteeringBehaviorDemo/SwiftSteeringBehaviorDemo/ViewController.swift",
+  "offset": 948,
+  "remove": 8,
+  "text": "d",
+ }
+]

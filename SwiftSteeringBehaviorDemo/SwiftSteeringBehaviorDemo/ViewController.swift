@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let square = UIView(frame: CGRect(x: 100, y: 100, width: 100, height: 100));
-        square.backgroundColor = UIColor.grayColor();
+        square.backgroundColor = UIColor.gray;
         view.addSubview(square);
         //
         var animator:UIDynamicAnimator!;
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         animator.addBehavior(gravity);
         //
         let barrier = UIView(frame: CGRect(x: 0, y: 300, width: 130, height: 20));
-        barrier.backgroundColor = UIColor.redColor();
+        barrier.backgroundColor = UIColor.red;
         view.addSubview(barrier);
         //Handle collision
         var collision:UICollisionBehavior!;
