@@ -1,0 +1,7 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.51 clang-802.0.41)"
+options: "da06a4732fcc1b88ad23cd33ac31be6b"
+build_time: [545282251, 402530000]
+inputs:
+  "/Users/smartkit/git/SwiftSteeringBehavior/SwiftSteeringBehavors3/SwiftSteeringBehavors3/GameScene.swift": [545282249, 0]
+  "/Users/smartkit/git/SwiftSteeringBehavior/SwiftSteeringBehavors3/SwiftSteeringBehavors3/GameViewController.swift": [545276436, 0]
+  "/Users/smartkit/git/SwiftSteeringBehavior/SwiftSteeringBehavors3/SwiftSteeringBehavors3/AppDelegate.swift": [545276436, 0]
