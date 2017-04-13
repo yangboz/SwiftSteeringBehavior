@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene,SKPhysicsContactDelegate {
     
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
@@ -27,12 +27,39 @@ class GameScene: SKScene {
         spaceshipNode?.position = rightPoint;
         spaceshipNode?.position = leftPoint;
         //TODO:Run action......
+        //Physics World
+        // 1.You create an edge-based body. In contrast to the volume-based body you added to the ball, an edge-based body does not have mass or volume, and is unaffected by forces or impulses.
+        let borderBody = SKPhysicsBody(edgeLoopFrom: self.frame)
+//        let borderBody = SKPhysicsBody(circleOfRadius: (self.frame.width))
+        // 2
+        borderBody.friction = 0
+        // 3
+        self.physicsBody = borderBody
+        //
+        physicsWorld.gravity = CGVector(dx: 0.0, dy: 0)
+        
+        let ball = childNode(withName: "Spaceship") as! SKSpriteNode
+        ball.physicsBody!.applyImpulse(CGVector(dx: 2.0, dy: -2.0))
+        
+        let bottomRect = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: 1)
+        let bottom = SKNode()
+        bottom.physicsBody = SKPhysicsBody(edgeLoopFrom: bottomRect)
+        addChild(bottom)
+        //
+//        spaceshipNode?.physicsBody?.isDynamic = true;
+//        spaceshipNode?.physicsBody?.mass = 0.02;
+//        spaceshipNode?.physicsBody?.velocity = self.physicsBody!.velocity
+        spaceshipNode?.physicsBody?.applyImpulse(CGVector(dx: 2.0, dy: -2.0))
+        //
+        physicsWorld.contactDelegate = self
+        
         // Get label node from scene and store it for use later
         self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
         if let label = self.label {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
+
         
         // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05
@@ -96,5 +123,10 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+    }
+    
+    // MARK: - SKPhysicsContactDelegate
+    func didBegin(_ contact: SKPhysicsContact) {
+        //TODO
     }
 }

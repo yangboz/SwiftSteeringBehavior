@@ -158,10 +158,11 @@ SWIFT_CLASS("_TtC22SwiftSteeringBehavors311AppDelegate")
 @class SKView;
 @class UITouch;
 @class UIEvent;
+@class SKPhysicsContact;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC22SwiftSteeringBehavors39GameScene")
-@interface GameScene : SKScene
+@interface GameScene : SKScene <SKPhysicsContactDelegate>
 - (void)didMoveToView:(SKView * _Nonnull)view;
 - (void)touchDownAtPoint:(CGPoint)pos;
 - (void)touchMovedToPoint:(CGPoint)pos;
@@ -171,6 +172,7 @@ SWIFT_CLASS("_TtC22SwiftSteeringBehavors39GameScene")
 - (void)touchesEnded:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
 - (void)touchesCancelled:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nullable)event;
 - (void)update:(NSTimeInterval)currentTime;
+- (void)didBeginContact:(SKPhysicsContact * _Nonnull)contact;
 - (nonnull instancetype)initWithSize:(CGSize)size OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
