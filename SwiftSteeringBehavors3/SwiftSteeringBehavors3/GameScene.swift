@@ -30,28 +30,42 @@ class GameScene: SKScene,SKPhysicsContactDelegate {
         //Physics World
         // 1.You create an edge-based body. In contrast to the volume-based body you added to the ball, an edge-based body does not have mass or volume, and is unaffected by forces or impulses.
         let borderBody = SKPhysicsBody(edgeLoopFrom: self.frame)
-//        let borderBody = SKPhysicsBody(circleOfRadius: (self.frame.width))
-        // 2
+        // 2.simulate friction on border contact
         borderBody.friction = 0
-        // 3
+        // 3.body with border frame.
         self.physicsBody = borderBody
         //
         physicsWorld.gravity = CGVector(dx: 0.0, dy: 0)
-        
-        let ball = childNode(withName: "Spaceship") as! SKSpriteNode
-        ball.physicsBody!.applyImpulse(CGVector(dx: 2.0, dy: -2.0))
-        
+        //
+        physicsWorld.contactDelegate = self
+        //get child node by pre-defined name
+        let spaceship = childNode(withName: "Spaceship") as! SKSpriteNode
+        //
         let bottomRect = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: 1)
+        //
         let bottom = SKNode()
         bottom.physicsBody = SKPhysicsBody(edgeLoopFrom: bottomRect)
         addChild(bottom)
         //
-//        spaceshipNode?.physicsBody?.isDynamic = true;
-//        spaceshipNode?.physicsBody?.mass = 0.02;
-//        spaceshipNode?.physicsBody?.velocity = self.physicsBody!.velocity
-        spaceshipNode?.physicsBody?.applyImpulse(CGVector(dx: 2.0, dy: -2.0))
-        //
-        physicsWorld.contactDelegate = self
+        //1. mass:the mass of body.
+        spaceship.physicsBody?.mass = 0.1;
+        //2.density:the density of body.
+        spaceship.physicsBody?.density = 1;
+        //3.area:the area of body.get-only.
+//        spaceship.physicsBody?.area
+        //4.friction:determines the "roughness" for the surface of physic body(0.0-1.0)
+        spaceshipNode?.physicsBody?.friction = 0.01;
+        //5. velocity:as know as a physic vector quantity.
+        spaceship.physicsBody?.velocity = self.physicsBody!.velocity
+        
+        //1.apply force,to the center of gravity of center of physics body.
+        spaceship.physicsBody!.applyForce(CGVector())
+        //2.apply torque,to an object.
+        spaceship.physicsBody!.applyTorque(CGFloat())
+        //3.apply impulse,to the center of gravity of center of physics body.
+        spaceship.physicsBody!.applyImpulse(CGVector())
+        //4.apply impulse with angular value.
+        spaceship.physicsBody!.applyAngularImpulse(CGFloat())
         
         // Get label node from scene and store it for use later
         self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
